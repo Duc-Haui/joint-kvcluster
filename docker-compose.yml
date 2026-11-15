@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  squeezed_attention:
+    build: .
+    image: squeezed_attention_env
+    container_name: squeezed_attention_gpu
+    volumes:
+      # Mount thư mục SqueezedAttention-main hiện tại vào /app trong container
+      - .:/app
+      
+      # [ĐIỂM NHẤN] Mount toàn bộ thư mục gốc U:\Sq vào đúng cấu trúc đường dẫn Linux cũ!
+      # Tuyệt chiêu này giúp TẤT CẢ các script bash (run_offline_clustering.sh, run_E1.sh,...)
+      # dù có chứa đường dẫn hardcode "/media/an/.../models" vẫn chạy trơn tru mà KHÔNG PHẢI SỬA BẤT KỲ DÒNG CODE NÀO!
+      - U:\Sq:/media/an/720CDC460CDC074F/DucDang/SqueezedAttention
+
+    working_dir: /app
+    ipc: host # Cực kỳ quan trọng để PyTorch truyền tải data giữa các process
+    shm_size: '16gb' # Mở rộng Shared Memory bằng kích thước VRAM để chống tràn bộ nhớ
+    stdin_open: true # Giữ cho stdin mở (docker run -i)
+    tty: true # Tạo terminal (docker run -t)
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

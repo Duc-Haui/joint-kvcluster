@@ -1,0 +1,146 @@
+# =============================================================================
+# .gitignore — luan van Squeezed Attention + Value-Aware Retrieval
+# =============================================================================
+
+# --- TUYET DOI KHONG COMMIT: hang chuc GB, deu tai tao duoc tu code ---------
+Clusters-*/
+Clusters-GPU*/
+Clusters-E1*/
+Clusters-VA*/
+
+# Model AWQ / trong so (vai GB)
+LLaMA-2-7B-32K*/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf
+
+# --- Ket qua chay thu (SQ_LIMIT) — khong phai so lieu that ------------------
+*-lim[0-9]*/
+# [CHET: bi neo vao thu muc goc] LongBench/pred_*-lim*/
+
+# --- Log chay: to (hang tram MB) va tai tao duoc ---------------------------
+# [CHET: bi neo vao thu muc goc] LongBench/logs_SQ/
+# [CHET: bi neo vao thu muc goc] LongBench/logs_E1/
+*.log
+
+# --- Sao luu do cac ban va tao ra ------------------------------------------
+*.bak
+*.bak[0-9]
+*.bak_*
+*.orig
+*.rej
+
+# --- Python ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.ipynb_checkpoints/
+
+# --- Moi truong / IDE -----------------------------------------------------
+.venv/
+venv/
+env/
+.idea/
+.vscode/
+.DS_Store
+
+# --- Cache cua HuggingFace neu lo nam trong cay thu muc --------------------
+.cache/
+datasets_cache/
+
+# =============================================================================
+# CO COMMIT (khong ignore) — de o day cho ro rang:
+#   - toan bo ma nguon: squeezedattention/, value_aware/, patches/, scripts/
+#   - transformers/ fork da va (modeling_llama.py la trong tam dong gop)
+#   - docs/: METHODOLOGY.md, INTEGRATION.md
+#   - environment.yml
+#   - LongBench/pred_*/**/*.jsonl : KET QUA THAT (~10 MB, la bang chung)
+#
+# Neu muon repo chi co ma nguon, bo comment dong duoi:
+# [CHET] LongBench/pred_*/
+# =============================================================================
+
+### === SUA: luat bi neo sai va luat trong-so an ca ket qua ===
+# 1) Luat logs/-lim cu bat dau bang "LongBench/" nen bi neo vao thu muc
+#    goc va khong bao gio khop. Dung "**/" de khop o moi do sau.
+**/LongBench/logs_SQ/
+**/LongBench/logs_E1/
+**/LongBench/pred_*-lim*/
+**/LongBench/data_val/
+# 2) Luat  LLaMA-2-7B-32K*/  o tren viet ra de chan trong so model, nhung
+#    vi khong co "/" o giua nen no khop o moi do sau — va moi thu muc
+#    ket qua deu la pred_*/LLaMA-2-7B-32K_PC5_PERC0.x/ , nen no chan luon
+#    het ket qua. Dong duoi tra lai thu muc ket qua, trong so van bi chan
+#    (vi *.safetensors / *.bin / *.pt da bi chan rieng o tren).
+!**/pred_*/LLaMA-2-7B-32K*/
+
+# 3) --giu-pred: ket qua tho .jsonl DUOC commit lam bang chung.
+#    Doi y thi them lai dong:  **/LongBench/pred_*/
+
+# ket qua chay, du lieu, tai lieu rieng: khong dua len GitHub
+**/LongBench/pred*/
+**/LongBench/logs*/
+**/LongBench/data_val/
+**/Clusters-*/
+*.xlsx
+*.docx
+*.bak
+*.bak_*
+*.bak[0-9]*
+.gitignore.truoc_khi_sua
+CLAUDE.md
+SqueezedAttention-main/BaoCao_*
+
+# file rieng / thu nghiem, khong can de chay bai bao (bo_khoi_git.sh)
+/benchmark_latency.py
+/benchmark_memory.py
+/chay_bang_chinh.sh
+/doi_duong_dan.sh
+/export_env.sh
+/xuat_moi_truong.sh
+/git_sua_ignore.sh
+/thu_chung_cum.sh
+/fix_dgb_layer.py
+/fix_va_formula.py
+/patch_vb_all.py
+/kept_by_layer.py
+/exp_logs
+/ket_qua
+/bo_khoi_git.sh
+/SqueezedAttention-main/_bgt_test
+/SqueezedAttention-main/_thu_chung_cum
+/SqueezedAttention-main/moi_truong
+/SqueezedAttention-main/benchmark_latency.py
+/SqueezedAttention-main/benchmark_memory.py
+/SqueezedAttention-main/compare_sample.py
+/SqueezedAttention-main/debug_clustering.sh
+/SqueezedAttention-main/experiment_awq_unquantized_cache.py
+/SqueezedAttention-main/export_academic_examples.py
+/SqueezedAttention-main/fix_value_enriched.py
+/SqueezedAttention-main/generate_report_docx.py
+/SqueezedAttention-main/implementation_plan.md
+/SqueezedAttention-main/inference_optimizations.py
+/SqueezedAttention-main/kept_by_layer.py
+/SqueezedAttention-main/kv_cache_calculator.py
+/SqueezedAttention-main/old_modelling_llma.py
+/SqueezedAttention-main/oracle_value_estimate.py
+/SqueezedAttention-main/packages_list.txt
+/SqueezedAttention-main/plot_ablation.py
+/SqueezedAttention-main/plot_hallucination_global.py
+/SqueezedAttention-main/plot_hallucination.py
+/SqueezedAttention-main/plot_qualitative_image.py
+/SqueezedAttention-main/plot_radar.py
+/SqueezedAttention-main/plot_results.py
+/SqueezedAttention-main/plot_variance.py
+/SqueezedAttention-main/run_all_experiments_integrated.sh
+/SqueezedAttention-main/run_eval_yourself.sh
+/SqueezedAttention-main/serve_vllm.py
+/SqueezedAttention-main/task.md
+/SqueezedAttention-main/TomTat_TaiSao_Chon_AWQ.md
+/SqueezedAttention-main/BaoCao_AWQ_vs_LuongTuHoa.md
+/SqueezedAttention-main/LongBench/old_pred.py
+/SqueezedAttention-main/LongBench/bang_vblend.py

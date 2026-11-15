@@ -1,0 +1,27 @@
+name: sq310_win
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pytorch=2.2.2
+  - torchvision=0.17.2
+  - torchaudio=2.2.2
+  - pytorch-cuda=12.1
+  - pip
+  - pip:
+      - transformers==4.40.0
+      - datasets==2.19.2
+      - accelerate==0.27.2
+      - sentencepiece==0.2.1
+      - scikit-learn==1.7.2
+      - pandas==2.2.1
+      - scipy==1.15.3
+      - tqdm==4.68.2
+      - matplotlib==3.10.9
+      - pyyaml==6.0.3
+      - protobuf==4.25.9
+      - rouge==1.0.1
+      - safetensors==0.8.0

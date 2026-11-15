@@ -1,0 +1,14 @@
+Offline clustering (s/context)    & $0.75$ & $0.98$ & $+30.5\%$ \\
+Prefill (ms)                      & $885.1$ & $885.6$ & $+0.1\%$ \\
+Decoding (ms/token)               & $52.9$ & $51.9$ & $-1.9\%$ \\
+End-to-end, $32$ tokens (ms)      & $2524$ & $2494$ & $-1.2\%$ \\
+Peak VRAM (MiB)                   & $5408$ & $5408$ & $0.0\%$ \\
+Peak host memory (MiB)            & $1923$ & $1956$ & $+1.7\%$ \\
+
+--- so de sua doan van Section 'Runtime and Memory Overhead' ---
+GPU Quadro RTX 5000, ngu canh 1023 token, attn eager, lap 20
+Gom cum: Squeezed 0.75±0.02 s, JKV 0.98±0.01 s (TB 9 context) -> x1.31
+prefill: sq 885.09±1.00 | jkv 885.65±0.75
+decode: sq 52.88±0.60 | jkv 51.87±0.13
+e2e: sq 2524.26±18.63 | jkv 2493.65±4.12
+All-KV decode 36.2 ms/token -> Squeezed cham x1.46, JKV cham x1.43

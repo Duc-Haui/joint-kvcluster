@@ -1,0 +1,17 @@
+so_sanh,y_nghia,nhom,n_cau,delta,ci95_lo,ci95_hi,p_mot_phia
+E1-E0,chi gom cum K-V,p=0.7,500,0.792,-0.209,1.791,0.0692
+E1-E0,chi gom cum K-V,p=0.8,500,1.685,0.645,2.703,0.0004
+E1-E0,chi gom cum K-V,p=0.9,500,0.907,-0.36,2.155,0.0794
+E1-E0,chi gom cum K-V,tb muc nen,500,1.128,0.454,1.828,0.0006
+E2-E0,chi boost,p=0.7,500,-0.008,-0.2,0.178,0.5382
+E2-E0,chi boost,p=0.8,500,0.11,-0.169,0.403,0.2308
+E2-E0,chi boost,p=0.9,500,0.204,-0.134,0.557,0.1196
+E2-E0,chi boost,tb muc nen,500,0.102,-0.063,0.272,0.1072
+E3-E0,day du,p=0.7,500,0.81,-0.175,1.778,0.048
+E3-E0,day du,p=0.8,500,1.514,0.489,2.541,0.0012
+E3-E0,day du,p=0.9,500,0.656,-0.591,1.892,0.1492
+E3-E0,day du,tb muc nen,500,0.994,0.354,1.711,0.0016
+E3-E1,them boost khi da gom cum,p=0.7,500,0.019,-0.33,0.372,0.4626
+E3-E1,them boost khi da gom cum,p=0.8,500,-0.171,-0.595,0.287,0.7728
+E3-E1,them boost khi da gom cum,p=0.9,500,-0.251,-0.73,0.202,0.8516
+E3-E1,them boost khi da gom cum,tb muc nen,500,-0.134,-0.373,0.105,0.8576

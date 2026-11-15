@@ -1,0 +1,18 @@
+# Thêm vào .dockerignore để tránh copy file nặng/không cần thiết
+*.tar.gz
+*.zip
+*.rar
+__pycache__/
+*.pyc
+.git/
+*.egg-info/
+dist/
+build/
+.idea/
+.vscode/
+
+# KHÔNG ignore các thư mục quan trọng
+# SqueezedAttention-main/  (code chính)
+# value_aware_squeezed_project/  (code value-aware)
+# requirement_conda.yml  (config môi trường)
+# environment_full.yml  (config đầy đủ - tạo bởi export_env.sh)
